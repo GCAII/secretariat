@@ -14,15 +14,15 @@
 schema_version: 1
 
 # Release entry. The archived bundle is `secretariat-GCAII.zip`, exported from
-# the release tag `GCAII` at commit 914c972; the document version is 1.0.0.
-# `archive` is filled when the DOI is registered.
+# commit 914c972, which tag `v1.0.0` points at. `archive` is filled when the DOI
+# is registered.
 releases:
   - id: GCAII-STD-0001-1.0.0-2026-11-08
     document: GCAII-STD-0001
     title: "Baseline requirements for constrained, zero-telemetry edge inference"
     version: 1.0.0
     date: 2026-11-08
-    url: "https://github.com/GCAII/secretariat/blob/GCAII/specs/GCAII-STD-0001/spec.md"
+    url: "https://github.com/GCAII/secretariat/blob/v1.0.0/specs/GCAII-STD-0001/spec.md"
     sha256: "759942bfeeee2fed76b39e54af7f22e5e193bb509c0a449a3a667ca0e5571fbf"
     archive: null
     notes: "Initial publication. Bundle: secretariat-GCAII.zip (71 files, content-identical to commit 914c972)."
