@@ -13,23 +13,19 @@
 
 schema_version: 1
 
-# Pre-registry state (2026-11-08): the 1.0.0 baseline is a repository
-# publication. Its immutable release bundle and DOI are pending, so no
-# release entry is recorded yet. Add the entry once the bundle SHA-256 exists.
-releases: []
-
-# Example entry (replace `[]` above with a list when the first release exists):
-#
-# releases:
-#   - id: GCAII-STD-0001-1.0.0-2026-11-08
-#     document: GCAII-STD-0001
-#     title: "Baseline requirements for constrained, zero-telemetry edge inference"
-#     version: 1.0.0
-#     date: 2026-11-08
-#     url: "https://github.com/GCAII/secretariat/blob/main/specs/GCAII-STD-0001/spec.md"
-#     sha256: "<64-hex digest>"   # digest of the archived release bundle
-#     archive: null               # persistent identifier, once assigned
-#     notes: "Initial publication."
+# Release entry. The archived bundle is `secretariat-GCAII.zip`, exported from
+# the release tag `GCAII` at commit 914c972; the document version is 1.0.0.
+# `archive` is filled when the DOI is registered.
+releases:
+  - id: GCAII-STD-0001-1.0.0-2026-11-08
+    document: GCAII-STD-0001
+    title: "Baseline requirements for constrained, zero-telemetry edge inference"
+    version: 1.0.0
+    date: 2026-11-08
+    url: "https://github.com/GCAII/secretariat/blob/GCAII/specs/GCAII-STD-0001/spec.md"
+    sha256: "759942bfeeee2fed76b39e54af7f22e5e193bb509c0a449a3a667ca0e5571fbf"
+    archive: null
+    notes: "Initial publication. Bundle: secretariat-GCAII.zip (71 files, content-identical to commit 914c972)."
 
 declarations: []
 
