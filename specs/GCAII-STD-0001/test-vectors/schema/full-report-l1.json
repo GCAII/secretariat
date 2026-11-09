@@ -1,0 +1,113 @@
+{
+  "report_version": "1.0",
+  "spec_version": "1.0.0",
+  "capabilities": {
+    "persists_prompt_data": false,
+    "persists_index": false,
+    "processes_personal_data": false,
+    "stores_data_at_rest": false,
+    "declares_network_channel": false,
+    "supports_deterministic_mode": false
+  },
+  "conformance_level": "L1",
+  "assessment": {
+    "declared_at": "2026-11-08",
+    "scope_url": "https://gcaii.invalid/declarations/full-report-example"
+  },
+  "subject": {
+    "name": "Example constrained inference runtime",
+    "version": "1.0.0",
+    "model_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+    "hash_algorithm": "sha256"
+  },
+  "environment": {
+    "os": "Example OS 1.0",
+    "cpu": "Example CPU",
+    "memory_gb": 4
+  },
+  "results": [
+    { "requirement": "REQ-5.1.1", "status": "pass" },
+    { "requirement": "REQ-5.1.2", "status": "pass" },
+    { "requirement": "REQ-5.1.3", "status": "pass" },
+    { "requirement": "REQ-5.1.4", "status": "pass" },
+    { "requirement": "REQ-5.2.1", "status": "pass" },
+    {
+      "requirement": "REQ-5.2.2",
+      "status": "not_applicable",
+      "capability": "persists_prompt_data",
+      "reason": "Prompt data does not reach a paging store.",
+      "evidence": "Process mapping listing shows no file-backed region for prompt buffers."
+    },
+    {
+      "requirement": "REQ-5.2.3",
+      "status": "not_applicable",
+      "capability": "persists_prompt_data",
+      "reason": "No crash artifact is produced.",
+      "evidence": "Induced abort produced no new file in the working directory or the dump path."
+    },
+    { "requirement": "REQ-5.2.4", "status": "pass" },
+    { "requirement": "REQ-5.2.5", "status": "pass" },
+    { "requirement": "REQ-5.2.6", "status": "pass" },
+    {
+      "requirement": "REQ-5.3.1",
+      "status": "not_applicable",
+      "capability": "processes_personal_data",
+      "reason": "The deployment declares that model input contains no personal data.",
+      "evidence": "Documented input schema and operator policy excluding personal data."
+    },
+    {
+      "requirement": "REQ-5.3.2",
+      "status": "not_applicable",
+      "capability": "processes_personal_data",
+      "reason": "No filtering is present because no personal data is processed.",
+      "evidence": "Configuration excerpt shows no filter component enabled."
+    },
+    { "requirement": "REQ-5.3.3", "status": "pass" },
+    { "requirement": "REQ-5.3.4", "status": "pass" },
+    {
+      "requirement": "REQ-5.3.5",
+      "status": "not_applicable",
+      "capability": "persists_index",
+      "reason": "No index survives process exit.",
+      "evidence": "Directory listing after exit contains no index files."
+    },
+    { "requirement": "REQ-5.4.1", "status": "pass" },
+    { "requirement": "REQ-5.4.2", "status": "pass" },
+    { "requirement": "REQ-5.4.3", "status": "pass" },
+    { "requirement": "REQ-5.5.1", "status": "pass" },
+    { "requirement": "REQ-5.5.2", "status": "pass" },
+    { "requirement": "REQ-5.5.3", "status": "pass" },
+    {
+      "requirement": "REQ-5.6.1",
+      "status": "not_applicable",
+      "capability": "stores_data_at_rest",
+      "reason": "No prompt-derived data is written to storage.",
+      "evidence": "Strace-style file-write listing over a full run shows no write of prompt data."
+    },
+    {
+      "requirement": "REQ-5.6.2",
+      "status": "not_applicable",
+      "capability": "stores_data_at_rest",
+      "reason": "No ciphertext exists, so no key is stored alongside it.",
+      "evidence": "Storage directory listing after a full run is empty."
+    },
+    {
+      "requirement": "REQ-5.6.3",
+      "status": "not_applicable",
+      "capability": "stores_data_at_rest",
+      "reason": "No key material is derived because nothing is stored.",
+      "evidence": "Configuration excerpt shows no key-derivation settings."
+    },
+    {
+      "requirement": "REQ-5.6.4",
+      "status": "not_applicable",
+      "capability": "stores_data_at_rest",
+      "reason": "No stored envelope exists to report on.",
+      "evidence": "Storage directory listing after a full run is empty."
+    },
+    { "requirement": "REQ-5.7.1", "status": "pass" },
+    { "requirement": "REQ-5.7.2", "status": "pass" },
+    { "requirement": "REQ-5.7.3", "status": "pass" }
+  ],
+  "generated_at": "2026-11-08T12:00:00Z"
+}

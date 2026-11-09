@@ -1,0 +1,36 @@
+# OS files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.DS_Store
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Node
+node_modules/
+
+# Build output
+dist/
+build/
+.cache/
+*.log
+
+# Local secrets and environment
+.env
+.env.*
+*.local
+
+# Generated reports (keep signed releases in documents/releases/)
+reports/
+*.report.json
+!specs/**/test-vectors/**/*.json

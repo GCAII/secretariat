@@ -1,0 +1,13 @@
+# Code owners
+#
+# Replace @zz-47 with a team handle once the organization has one.
+# CODEOWNERS only takes effect when branch protection requires code owner review.
+
+*                       @zz-47
+
+/CHARTER.md             @zz-47
+/GOVERNANCE.md          @zz-47
+/specs/                 @zz-47
+/programs/              @zz-47
+/agreements/            @zz-47
+/.github/               @zz-47

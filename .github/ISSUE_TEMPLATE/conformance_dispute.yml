@@ -1,0 +1,79 @@
+name: Conformance dispute
+description: Challenge a record, a declaration, or a review finding.
+title: "[conformance] "
+labels: ["conformance", "appeal"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form to dispute a recorded declaration or a review finding. Read `programs/appeals.md` first.
+        Do not include confidential data; link to a private channel if needed.
+
+  - type: input
+    id: version
+    attributes:
+      label: Specification version and level
+      description: The version named in the declaration, and the level claimed.
+      placeholder: GCAII-STD-0001 v1.0.0 / L1
+    validations:
+      required: true
+
+  - type: input
+    id: declaration
+    attributes:
+      label: Declaration or report
+      description: The `scope_url` from the declaration, or the `report_url` and its digest.
+      placeholder: "https://… (sha256: …)"
+    validations:
+      required: true
+
+  - type: textarea
+    id: capabilities
+    attributes:
+      label: Capability block claimed
+      description: The six boolean declarations in the report, as filed.
+      placeholder: persists_prompt_data=false, persists_index=false, …
+    validations:
+      required: true
+
+  - type: input
+    id: requirement
+    attributes:
+      label: Disputed requirement
+      description: The `REQ-` identifier in dispute, or "none" for a procedural dispute.
+      placeholder: REQ-5.2.3
+    validations:
+      required: true
+
+  - type: textarea
+    id: grounds
+    attributes:
+      label: Grounds
+      description: Procedural error, factual error, conflict of interest, or disproportionate remedy.
+    validations:
+      required: true
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      description: Links, hashes, logs, or a reproduction.
+    validations:
+      required: true
+
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Requested outcome
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checks
+      options:
+        - label: I read `programs/appeals.md`.
+          required: true
+        - label: This is not a security vulnerability.
+          required: true

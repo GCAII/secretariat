@@ -1,0 +1,60 @@
+# GCAII registry
+#
+# Append-only. Nothing in this file is deleted; an entry that expires or is
+# revoked is marked, not removed.
+#
+# Two lists live here and they are not the same thing:
+#   releases     — published versions of a document. Issued by the Secretariat.
+#   declarations — conformance claims filed by adopters. Recorded, not approved.
+#
+# The Secretariat cannot alter a declaration without invalidating its
+# report_sha256. That is the point of the hash: it is a constraint on the
+# record-keeper, not on the adopter.
+
+schema_version: 1
+
+# Pre-registry state (2026-11-08): the 1.0.0 baseline is a repository
+# publication. Its immutable release bundle and DOI are pending, so no
+# release entry is recorded yet. Add the entry once the bundle SHA-256 exists.
+releases: []
+
+# Example entry (replace `[]` above with a list when the first release exists):
+#
+# releases:
+#   - id: GCAII-STD-0001-1.0.0-2026-11-08
+#     document: GCAII-STD-0001
+#     title: "Baseline requirements for constrained, zero-telemetry edge inference"
+#     version: 1.0.0
+#     date: 2026-11-08
+#     url: "https://github.com/GCAII/secretariat/blob/main/specs/GCAII-STD-0001/spec.md"
+#     sha256: "<64-hex digest>"   # digest of the archived release bundle
+#     archive: null               # persistent identifier, once assigned
+#     notes: "Initial publication."
+
+declarations: []
+
+# Example entry:
+#
+# declarations:
+#   - id: DECL-0001
+#     publisher: "<publisher>"
+#     subject: "<implementation name and version>"
+#     spec_id: GCAII-STD-0001
+#     spec_version: 1.0.0
+#     level: L1                    # L1 | L2 | L3 | L4
+#     date: 2026-11-08
+#     scope_url: "<published declaration>"
+#     report_url: null             # required at L2 and above
+#     report_sha256: null          # required at L2 and above
+#     capabilities:               # all six booleans, named explicitly
+#       persists_prompt_data: false
+#       persists_index: false
+#       processes_personal_data: false
+#       stores_data_at_rest: false
+#       declares_network_channel: false
+#       supports_deterministic_mode: false
+#     status: active               # active | superseded | revoked | expired | unresolved
+#     decision: null               # verified | verified_with_limitations | returned | rejected
+#     decision_date: null
+#     reviewer: null
+#     notes: null

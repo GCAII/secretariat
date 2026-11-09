@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "If you use the standards or governance documents in this repository, cite it as below."
+title: "Global Constrained AI Initiative: Standards, Governance, and Conformance"
+type: report
+authors:
+  - family-names: Kayani
+    given-names: Zeeshan
+    orcid: "https://orcid.org/0009-0007-6506-1516"
+license: CC-BY-4.0
+version: 1.0.0
+date-released: 2026-11-08
+repository-code: "https://github.com/GCAII/secretariat"
+abstract: >-
+  Governance, specification, and conformance artifacts for the Global
+  Constrained AI Initiative, an unincorporated research and conformance initiative
+  focused on verifiable, resource-constrained AI deployment.
+keywords:
+  - constrained AI
+  - edge inference
+  - quantization
+  - GGUF
+  - small language models
+  - open standards

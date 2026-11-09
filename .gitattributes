@@ -1,0 +1,21 @@
+# Normalise everything to LF. Windows checkouts were producing CRLF churn.
+* text=auto eol=lf
+
+# Explicit, so editors and diffs behave even if core.autocrlf is set.
+*.md     text eol=lf
+*.yml    text eol=lf
+*.yaml   text eol=lf
+*.json   text eol=lf
+*.cff    text eol=lf
+*.txt    text eol=lf
+*.py     text eol=lf
+
+# Binary — never diff, never convert.
+*.png    binary
+*.jpg    binary
+*.jpeg   binary
+*.gif    binary
+*.ico    binary
+*.pdf    binary
+*.gguf   binary
+*.zip    binary

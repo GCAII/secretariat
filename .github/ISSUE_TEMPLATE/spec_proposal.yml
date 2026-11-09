@@ -1,0 +1,67 @@
+name: Specification proposal
+description: Propose a new requirement, section, or standard.
+title: "[proposal] "
+labels: ["proposal", "rfc"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        For a substantial change, draft an RFC using `rfcs/0000-template.md`
+        and link it here.
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: One paragraph. What are you proposing?
+    validations:
+      required: true
+
+  - type: textarea
+    id: motivation
+    attributes:
+      label: Motivation
+      description: What problem does it solve? Who is affected?
+    validations:
+      required: true
+
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope and non-goals
+      description: What is included, and what is explicitly excluded?
+    validations:
+      required: true
+
+  - type: textarea
+    id: normative
+    attributes:
+      label: Normative impact
+      description: Which MUST/SHOULD/MAY requirements change? Is it backward compatible?
+    validations:
+      required: true
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence or test plan
+      description: How would conformance be verified?
+    validations:
+      required: false
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checks
+      options:
+        - label: I searched existing proposals.
+          required: true
+        - label: I am willing to help implement this.
+          required: false

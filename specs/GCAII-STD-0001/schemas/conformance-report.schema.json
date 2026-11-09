@@ -1,0 +1,263 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/GCAII/secretariat/main/specs/GCAII-STD-0001/schemas/conformance-report.schema.json",
+  "title": "GCAII-STD-0001 Conformance Report",
+  "description": "Machine-readable evidence for a conformance claim against GCAII-STD-0001 v1.0.0. A report describes one tested configuration. It is not a certificate. The schema enforces completeness, not truth: whether the evidence is real is decided on review.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "report_version",
+    "spec_version",
+    "capabilities",
+    "conformance_level",
+    "subject",
+    "environment",
+    "results",
+    "generated_at"
+  ],
+  "properties": {
+    "report_version": {
+      "type": "string",
+      "const": "1.0",
+      "description": "Fixed at 1.0. No reports exist against an earlier published version, so the first release takes 1.0; see versioning.md 4."
+    },
+    "spec_version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$",
+      "description": "The specification version tested. Prereleases are not valid conformance targets. A report is valid only for the version it names."
+    },
+    "capabilities": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "persists_prompt_data",
+        "persists_index",
+        "processes_personal_data",
+        "stores_data_at_rest",
+        "declares_network_channel",
+        "supports_deterministic_mode"
+      ],
+      "description": "The closed capability set of specification 4.7. Every capability must be declared. A capability not listed here is invalid; adding one requires a minor specification version.",
+      "properties": {
+        "persists_prompt_data": { "type": "boolean" },
+        "persists_index": { "type": "boolean" },
+        "processes_personal_data": { "type": "boolean" },
+        "stores_data_at_rest": { "type": "boolean" },
+        "declares_network_channel": { "type": "boolean" },
+        "supports_deterministic_mode": { "type": "boolean" }
+      }
+    },
+    "conformance_level": {
+      "type": "string",
+      "enum": ["L1", "L2", "L3", "L4"],
+      "description": "L1 declared; L2 harness-verified; L3 independently reviewed; L4 continuous. Levels describe the state of the evidence, not the quality of the implementation."
+    },
+    "harness": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "version", "commit"],
+      "properties": {
+        "name": { "type": "string" },
+        "version": { "type": "string" },
+        "commit": { "type": "string" }
+      },
+      "description": "Required at L2 and above. At L1, use assessment instead."
+    },
+    "assessment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["declared_at", "scope_url"],
+      "properties": {
+        "declared_at": { "type": "string", "format": "date" },
+        "scope_url": {
+          "type": "string",
+          "format": "uri",
+          "description": "Where the declaration, its capability block, and the results for every requirement are published."
+        }
+      },
+      "description": "Required at L1 in place of harness. An L1 claim that is not published is not an L1 claim."
+    },
+    "categories": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string", "minLength": 1 },
+      "uniqueItems": true,
+      "description": "The personal-identifier categories the deployment documents, per REQ-5.3.1. Required when processes_personal_data is true. Naming a category here is a declaration that the filter targets it, not that suppression is complete."
+    },
+    "subject": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "version", "model_hash", "hash_algorithm"],
+      "properties": {
+        "name": { "type": "string" },
+        "version": { "type": "string" },
+        "model_hash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64,}$",
+          "description": "Digest of the model artifact actually loaded, of at least 256 bits."
+        },
+        "hash_algorithm": {
+          "type": "string",
+          "description": "The algorithm producing model_hash, named. Any digest of at least 256 bits is acceptable."
+        },
+        "repository": { "type": "string", "format": "uri" }
+      }
+    },
+    "environment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["os", "cpu", "memory_gb"],
+      "properties": {
+        "os": { "type": "string" },
+        "kernel": { "type": "string" },
+        "cpu": { "type": "string" },
+        "gpu": { "type": "string" },
+        "memory_gb": { "type": "number", "minimum": 0 },
+        "container": { "type": "string" },
+        "power_profile": { "type": "string" }
+      }
+    },
+    "results": {
+      "type": "array",
+      "minItems": 28,
+      "description": "One entry per applicable requirement. not_applicable is neither a pass nor a fail: it requires the capability declaration and the evidence that the capability is absent. minItems is a coverage floor: JSON Schema cannot enforce one entry per requirement, so a 28-entry array that duplicates one requirement and omits another still validates. The traceability table and the review check the rest.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["requirement", "status"],
+        "properties": {
+          "requirement": {
+            "type": "string",
+            "enum": [
+              "REQ-5.1.1", "REQ-5.1.2", "REQ-5.1.3", "REQ-5.1.4",
+              "REQ-5.2.1", "REQ-5.2.2", "REQ-5.2.3", "REQ-5.2.4", "REQ-5.2.5",
+              "REQ-5.2.6",
+              "REQ-5.3.1", "REQ-5.3.2", "REQ-5.3.3", "REQ-5.3.4", "REQ-5.3.5",
+              "REQ-5.4.1", "REQ-5.4.2", "REQ-5.4.3",
+              "REQ-5.5.1", "REQ-5.5.2", "REQ-5.5.3",
+              "REQ-5.6.1", "REQ-5.6.2", "REQ-5.6.3", "REQ-5.6.4",
+              "REQ-5.7.1", "REQ-5.7.2", "REQ-5.7.3"
+            ]
+          },
+          "status": {
+            "type": "string",
+            "enum": ["pass", "fail", "not_applicable"]
+          },
+          "capability": {
+            "type": "string",
+            "enum": [
+              "persists_prompt_data",
+              "persists_index",
+              "processes_personal_data",
+              "stores_data_at_rest",
+              "declares_network_channel",
+              "supports_deterministic_mode"
+            ],
+            "description": "Required when status is not_applicable. Names the capability declared false."
+          },
+          "reason": { "type": "string" },
+          "evidence": {
+            "type": "string",
+            "description": "An inspectable artifact, not an assertion: a listing, a configuration excerpt, or an observed state."
+          },
+          "measured": { "type": ["string", "number"] }
+        },
+        "allOf": [
+          {
+            "if": {
+              "properties": { "status": { "const": "not_applicable" } },
+              "required": ["status"]
+            },
+            "then": {
+              "required": ["capability", "reason", "evidence"]
+            }
+          },
+          {
+            "if": {
+              "properties": { "status": { "const": "fail" } },
+              "required": ["status"]
+            },
+            "then": {
+              "required": ["reason"]
+            }
+          }
+        ]
+      }
+    },
+    "limitations": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string" },
+      "description": "What this report does not establish. Required at L3 and L4."
+    },
+    "auditor": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "independence_statement"],
+      "properties": {
+        "name": { "type": "string" },
+        "affiliation": { "type": "string" },
+        "independence_statement": {
+          "type": "string",
+          "description": "How the reviewer is independent of the submitting implementation, against the criteria in conformance.md 2.1."
+        }
+      },
+      "description": "Required at L3 and L4."
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "report_sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$",
+      "description": "SHA-256 of the canonical JSON serialisation of this report with the report_sha256 field removed. A hash cannot cover itself; the excluded-field rule is part of the format, not an implementation choice."
+    },
+    "signature": {
+      "type": "string",
+      "description": "Detached signature over the canonical serialisation, in the format named by signature_format."
+    },
+    "signature_format": {
+      "type": "string",
+      "enum": ["minisign", "gpg", "sigstore"]
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": { "conformance_level": { "const": "L1" } },
+        "required": ["conformance_level"]
+      },
+      "then": { "required": ["assessment"] }
+    },
+    {
+      "if": {
+        "properties": { "conformance_level": { "enum": ["L2", "L3", "L4"] } },
+        "required": ["conformance_level"]
+      },
+      "then": { "required": ["harness", "report_sha256"] }
+    },
+    {
+      "if": {
+        "properties": { "conformance_level": { "enum": ["L3", "L4"] } },
+        "required": ["conformance_level"]
+      },
+      "then": { "required": ["limitations", "auditor"] }
+    },
+    {
+      "if": {
+        "properties": {
+          "capabilities": {
+            "properties": { "processes_personal_data": { "const": true } },
+            "required": ["processes_personal_data"]
+          }
+        },
+        "required": ["capabilities"]
+      },
+      "then": { "required": ["categories"] }
+    }
+  ]
+}
