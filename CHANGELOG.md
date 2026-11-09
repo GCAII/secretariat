@@ -28,7 +28,6 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 
 ### Removed
 
-- The `GCAIS` prefix and all `GCAIS-STD-*` references. See [`decisions/ADR-0002-gcaii-standards.md`](decisions/ADR-0002-gcaii-standards.md).
 - The pre-1.0 draft changelog entries. The 0.1.0 draft was never released.
 
 ### Fixed

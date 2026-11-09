@@ -28,15 +28,6 @@ GCAII publishes versioned specifications under the `GCAII-STD-*` namespace. This
 - Always include the full ID in a citation; "GCAII" alone is the organization, not a standard.
 - Titles are descriptive; the ID is the stable reference.
 
-## Namespace history
-
-| Prefix | Status | Reason |
-|---|---|---|
-| `GCAII-STD-*` | Active | Tied to the initiative; no known standards-body collision |
-| `GCAIS-STD-*` | Retired | Superseded by `GCAII-STD-*`; see `ADR-0002`. |
-
-See [`ADR-0002`](../decisions/ADR-0002-gcaii-standards.md).
-
 ## Adding a specification
 
 1. Allocate the next free number.
