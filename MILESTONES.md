@@ -33,7 +33,6 @@ Target horizon: Post-1.0.
 - [ ] Establishment of public communication channels and coordination with community discovery nodes.
 - [ ] Synchronisation and mirroring of releases to the Open Science Framework project <https://osf.io/zhvm7> (project public; content mirror pending).
 
-
 ---
 
 ## Phase 3: Conformance Harness & Tooling
@@ -73,3 +72,4 @@ The following paths are explicitly excluded from the current operational scope:
 - Formal legal incorporation or non-profit entity registration.
 - Commercial certification marks or proprietary accreditation schemes.
 - Paid membership tiers or institutional funding models.
+
