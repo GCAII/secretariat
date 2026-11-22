@@ -10,6 +10,7 @@ license: CC-BY-4.0
 version: 1.0.0
 date-released: 2026-11-08
 repository-code: "https://github.com/GCAII/secretariat"
+doi: "10.5281/zenodo.24089533"
 abstract: >-
   Governance, specification, and conformance artifacts for the Global
   Constrained AI Initiative, an unincorporated research and conformance initiative

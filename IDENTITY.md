@@ -27,7 +27,8 @@ See [`NAME.md`](NAME.md) for what the name is and is not, and [`DISCLAIMER.md`](
 | Email (all purposes) | `gcaii.secretariat@outlook.com` | live |
 | ORCID | [0009-0007-6506-1516](https://orcid.org/0009-0007-6506-1516) | live |
 | OSF project | <https://osf.io/zhvm7> | live, public |
-| Zenodo | `10.5281/zenodo.21815214`, `10.5281/zenodo.23310745` | live |
+| Zenodo (corpus) | [10.5281/zenodo.24089533](https://doi.org/10.5281/zenodo.24089533) · concept [10.5281/zenodo.24089532](https://doi.org/10.5281/zenodo.24089532) | live |
+| Zenodo (earlier papers) | [10.5281/zenodo.21815214](https://doi.org/10.5281/zenodo.21815214), [10.5281/zenodo.23310745](https://doi.org/10.5281/zenodo.23310745) | live |
 | Substack | — | Not yet created — blocked on live deployment |
 | LinkedIn | — | Not yet created — blocked on live deployment |
 

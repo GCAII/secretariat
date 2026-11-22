@@ -14,8 +14,8 @@
 schema_version: 1
 
 # Release entry. The archived bundle is `secretariat-v1.0.0.zip`, exported from
-# commit c7344b0, which tag `v1.0.0` points at. `archive` is filled when the DOI
-# is registered.
+# tag `v1.0.0` (commit 914c972). `archive` pins the version DOI, not the
+# concept DOI.
 releases:
   - id: GCAII-STD-0001-1.0.0-2026-11-08
     document: GCAII-STD-0001
@@ -24,10 +24,12 @@ releases:
     date: 2026-11-08
     url: "https://github.com/GCAII/secretariat/blob/v1.0.0/specs/GCAII-STD-0001/spec.md"
     sha256: "3b33cca8cf25312d80ad625a29bf644ceba86ce8541abc594b87c1b011962951"
-    archive: "10.5281/zenodo.24089532"
-    notes: "Initial publication. Bundle: secretariat-v1.0.0.zip (71 files, content-identical to commit c7344b0)."
+    archive: "10.5281/zenodo.24089533"
+    notes: "Initial publication. Bundle: secretariat-v1.0.0.zip (71 files, content-identical to commit 914c972)."
 
-# Example entry:
+declarations: []
+
+# Example declaration entry, for reference:
 #
 # declarations:
 #   - id: DECL-0001

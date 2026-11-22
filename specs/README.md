@@ -8,7 +8,7 @@ GCAII publishes versioned specifications under the `GCAII-STD-*` namespace. This
 
 | ID | Title | Status | Version | Capabilities | DOI |
 |---|---|---|---|---|---|
-| [`GCAII-STD-0001`](GCAII-STD-0001/README.md) | Baseline requirements for constrained, zero-telemetry edge inference | Active | 1.0.0 | 6, closed set | — |
+| [`GCAII-STD-0001`](GCAII-STD-0001/README.md) | Baseline requirements for constrained, zero-telemetry edge inference | Active | 1.0.0 | 6, closed set | [10.5281/zenodo.24089533](https://doi.org/10.5281/zenodo.24089533)  |
 
 ## Numbering policy
 

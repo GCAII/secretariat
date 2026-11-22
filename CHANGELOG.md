@@ -8,7 +8,7 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 
 ### Added
 
-- **Formal baseline launch.** Official release of `GCAII-STD-0001` (v1.0.0), establishing baseline requirements for constrained, zero-telemetry edge inference of sub-billion-parameter language models.
+- **Baseline corpus.** Initial publication of `GCAII-STD-0001` (v1.0.0), establishing baseline requirements for constrained, zero-telemetry edge inference of sub-billion-parameter language models.
 - **Closed capability set.** Defined six independent boolean capabilities (`persists_prompt_data`, `persists_index`, `processes_personal_data`, `stores_data_at_rest`, `declares_network_channel`, `supports_deterministic_mode`) with strict reporting rules.
 - **Machine-executable conformance schema.** Published a strict JSON Schema (Draft 2020-12) at `specs/GCAII-STD-0001/schemas/conformance-report.schema.json`, validating 28 required requirement results, capability gates, and L1–L4 evidence tiers.
 - **Test vectors.** Added a positive vector (`test-vectors/schema/full-report-l1.json`) and a negative vector (`test-vectors/schema/not-applicable-without-capability.json`).
@@ -16,6 +16,7 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 - **Versioning policy.** Added `versioning.md`, defining patch, minor, and major semantics for a standard.
 - **Environment and hygiene infrastructure.** Standardised repository governance, strict LF normalisation via `.gitattributes`, cross-platform editor defaults (`.editorconfig`), workspace hygiene (`.gitignore`), and Markdown lint rules (`.markdownlint.json`).
 - **Open-science licensing.** Added the canonical CC BY 4.0 `LICENSE` and immutable metadata governance in `CITATION.cff` and `documents/registry.yaml`.
+- **Zenodo deposit.** Published the 1.0.0 corpus on 2026-11-09 as [10.5281/zenodo.24089533](https://doi.org/10.5281/zenodo.24089533) (version DOI; concept `10.5281/zenodo.24089532`). Bundle `secretariat-v1.0.0.zip`, SHA-256 `3b33cca8…962951`.
 
 ### Changed
 

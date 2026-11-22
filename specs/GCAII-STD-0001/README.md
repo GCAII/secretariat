@@ -52,6 +52,4 @@ See [`spec.md`](spec.md) [Section 4.7](spec.md#section-4.7) and [Section 4.8](sp
 
 ## How to cite
 
-> Global Constrained AI Initiative (2026). *GCAII-STD-0001: Baseline requirements for constrained, zero-telemetry edge inference* (v1.0.0). <https://github.com/GCAII/secretariat>
-
-Once a DOI is minted, replace the URL with the DOI in [`documents/registry.yaml`](../../documents/registry.yaml).
+> Global Constrained AI Initiative (2026). *GCAII-STD-0001: Baseline requirements for constrained, zero-telemetry edge inference* (v1.0.0). <https://doi.org/10.5281/zenodo.24089533>

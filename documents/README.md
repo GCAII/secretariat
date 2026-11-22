@@ -25,12 +25,16 @@ different things.
 A release is a statement about text. A declaration is a statement about a
 tested configuration. Neither implies the other.
 
-## Pre-registry state
+## Release state
 
-The 1.0.0 baseline is a repository publication. Its immutable release bundle
-and DOI are pending, so `registry.yaml` has no release entry yet. This is a
-recorded state, not a missing record: the entry is added when the bundle
-SHA-256 exists. CHARTER 6.2 and 6.2.1 are satisfied when the deposit lands.
+The 1.0.0 baseline was published on 2026-11-08 and deposited on Zenodo on
+2026-11-09 as [10.5281/zenodo.24089533](https://doi.org/10.5281/zenodo.24089533)
+(version DOI; concept `10.5281/zenodo.24089532`). The registry holds one release
+entry with the bundle SHA-256 and the version DOI. The declarations list is
+empty, and that is the recorded state, not a missing record.
+
+A future release follows the same path: bundle, then SHA-256, then deposit,
+then entry.
 
 ## Release entry fields
 
